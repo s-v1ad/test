@@ -1,0 +1,6 @@
+.tabs-list {
+  &__list {
+    display: flex;
+    gap: clamp(0.75rem, 0.28571rem + 1.90476vw, 2rem); //32 - 12
+  }
+}

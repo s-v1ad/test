@@ -1,0 +1,28 @@
+.protocol-card {
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius-24);
+  padding: clamp(1rem, 0.76785rem + 0.95238vw, 1.625rem) toRem(24); //26 - 24
+  width: 100%;
+  cursor: pointer;
+  gap: clamp(0.75rem, 0.47142rem + 1.14285vw, 1.5rem); // 24 - 12
+
+  &__image {
+    flex-shrink: 0;
+    width: toRem(28);
+    height: toRem(28);
+  }
+
+  &__title {
+    overflow: hidden;
+    font-weight: 400;
+    font-size: clamp(1.125rem, 1.07857rem + 0.19047vw, 1.25rem); //20 - 18
+    line-height: 1.6;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &--active {
+    background-color: var(--color-accent-active);
+  }
+}

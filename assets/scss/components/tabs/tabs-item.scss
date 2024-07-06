@@ -1,0 +1,8 @@
+.tabs-item {
+  display: flex;
+  flex: 0 1 toRem(191);
+  align-items: center;
+  justify-content: center;
+  overflow: auto hidden;
+  padding: clamp(0.5625rem, 0.44642rem + 0.47619vw, 0.875rem) toRem(20); //14 - 9
+}

@@ -1,0 +1,24 @@
+.protocol-list {
+  border-radius: var(--border-radius-32);
+  padding: clamp(1rem, 0.6285rem + 1.5238vw, 2rem) clamp(1.5rem, 1.31428rem + 0.7619vw, 2rem);
+  background-color: var(--color-light-white);
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: toRem(16);
+  }
+
+  &__wrapper {
+    height: 100%;
+
+    // :deep(.simplebar-content-wrapper) {
+    //   overflow: hidden;
+    //   border-radius: var(--border-radius-24);
+    // }
+
+    &.simplebar-scrollable-y {
+      padding-right: toRem(32);
+    }
+  }
+}

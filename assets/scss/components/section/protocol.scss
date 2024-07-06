@@ -1,0 +1,26 @@
+.protocol {
+  padding: clamp(2.5rem, 1.10714rem + 5.71428vw, 6.25rem) 0
+    clamp(2rem, 0.42142rem + 6.47619vw, 6.25rem);
+  background-color: #f3f5f8;
+
+  &__title {
+    margin-bottom: clamp(1.5rem, 2.18571rem + -0.7619vw, 2rem); // 24 - 32
+    font-size: clamp(2.125rem, 1.70714rem + 1.71428vw, 3.25rem); // 52 - 34
+    text-align: center;
+  }
+
+  &__head {
+    margin-bottom: clamp(2.5rem, 1.57142rem + 3.80952vw, 5rem);
+  }
+
+  &__description {
+    text-align: center;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: toRem(446) 1fr;
+    grid-template-rows: toRem(600);
+    gap: clamp(1.5rem, 1.36071rem + 0.57142vw, 1.875rem); // 30 - 24
+  }
+}
