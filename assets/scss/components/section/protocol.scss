@@ -1,7 +1,7 @@
 .protocol {
   padding: clamp(2.5rem, 1.10714rem + 5.71428vw, 6.25rem) 0
     clamp(2rem, 0.42142rem + 6.47619vw, 6.25rem);
-  background-color: #f3f5f8;
+  background-color: var(--color-divider);
 
   &__title {
     margin-bottom: clamp(1.5rem, 2.18571rem + -0.7619vw, 2rem); // 24 - 32
@@ -21,6 +21,8 @@
     display: grid;
     grid-template-columns: toRem(446) 1fr;
     grid-template-rows: toRem(600);
+    min-width: 0;
+    max-width: 100%;
     gap: clamp(1.5rem, 1.36071rem + 0.57142vw, 1.875rem); // 30 - 24
   }
 }

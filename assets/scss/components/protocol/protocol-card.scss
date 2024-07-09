@@ -4,6 +4,7 @@
   border-radius: var(--border-radius-24);
   padding: clamp(1rem, 0.76785rem + 0.95238vw, 1.625rem) toRem(24); //26 - 24
   width: 100%;
+  transition: background-color var(--transition-default);
   cursor: pointer;
   gap: clamp(0.75rem, 0.47142rem + 1.14285vw, 1.5rem); // 24 - 12
 
@@ -24,5 +25,9 @@
 
   &--active {
     background-color: var(--color-accent-active);
+  }
+
+  @include hover {
+    background-color: var(--color-accent-hover);
   }
 }

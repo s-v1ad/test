@@ -1,15 +1,36 @@
 <script setup lang="ts">
-import Simplebar from 'simplebar-vue'
-import 'simplebar-vue/dist/simplebar.min.css'
+import { type IProtocol } from '~/types'
+
+type TProps = {
+  loader: boolean
+  modelValue: number
+  activeProtocol: IProtocol
+  protocolList: IProtocol[]
+}
+
+// Props
+defineProps<TProps>()
+
+// Emits
+const emits = defineEmits<{
+  (e: 'update:modelValue', value: number): void
+}>()
 </script>
 
 <template>
   <div class="protocol-list">
-    <Simplebar class="protocol-list__wrapper">
+    <AppLoader v-if="loader" />
+
+    <AppSimplebar v-else class="protocol-list__wrapper">
       <ul class="protocol-list__list">
-        <ProtocolCard v-for="i in 10" />
+        <ProtocolCard
+          v-for="(protocol, i) in protocolList"
+          :protocol="protocol"
+          :active-protocol="activeProtocol"
+          @click="$emit('update:modelValue', i)"
+        />
       </ul>
-    </Simplebar>
+    </AppSimplebar>
   </div>
 </template>
 

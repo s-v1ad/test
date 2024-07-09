@@ -17,9 +17,14 @@
   --color-light-white: #fefefe;
   --color-black: #000;
   --color-accent-active: rgb(0 148 255 / 7%);
+  --color-accent-hover: rgb(0 148 255 / 5%);
+  --color-divider: #f3f5f8;
 
   // RADIUS
   --border-radius-32: #{toRem(32)};
   --border-radius-24: #{toRem(24)};
   --border-radius-20: #{toRem(20)};
+
+  // TRANSITION
+  --transition-default: 0.2s ease;
 }
