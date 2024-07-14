@@ -1,29 +1,16 @@
 <script setup lang="ts">
 import { protocols } from '@/data/protocols'
-import type { IProtocolServices, IServices } from '@/types'
+import type { IProtocolServices } from '@/types'
 
 // Data
-const loaderList = ref<boolean>(true)
-const loaderContent = ref<boolean>(true)
-const protocolData = ref<IProtocolServices[]>([])
 const activeIndexProtocol = ref<number>(0)
 
 // Computed
-const activeProtocol = computed(() => protocolData.value[activeIndexProtocol.value])
+const activeProtocol = computed(() => protocols[activeIndexProtocol.value])
 
-const servicesData = computed(() => protocolData.value[activeIndexProtocol.value]?.services)
+const servicesData = computed(() => protocols[activeIndexProtocol.value]?.services)
 
 // Methods
-
-// Lifecycle hooks
-onMounted(() => {
-  // Эмулируем загрузку
-  setTimeout(() => {
-    protocolData.value = protocols
-    loaderList.value = false
-    loaderContent.value = false
-  }, 800)
-})
 </script>
 
 <template>
@@ -40,12 +27,11 @@ onMounted(() => {
         <div class="protocol__content">
           <ProtocolList
             v-model="activeIndexProtocol"
-            :loader="loaderList"
-            :protocol-list="protocolData"
+            :protocol-list="protocols"
             :active-protocol="activeProtocol"
           />
 
-          <ServiceContent :loader="loaderContent" :content="servicesData" />
+          <ServiceContent :content="servicesData" />
         </div>
       </div>
     </div>

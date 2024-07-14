@@ -1,37 +1,38 @@
 <script setup lang="ts">
-import type { IServices } from '~/types'
+import type { IServices, TypeService, IProtocolService } from '~/types'
 
 // Props
-const props = defineProps<{ loader: boolean; content: IServices }>()
+const props = defineProps<{ content: IServices }>()
 
 // Data
-const activeTab = ref(Object.keys(props.content)[0])
-
-// watch
-// watch(
-//   () => props.content,
-//   () => (activeTab.value = Object.keys(props.content)[0])
-// )
+const activeTab = ref<TypeService>('bridges')
 
 // Computed
 const tabsList = computed(() => Object.keys(props.content))
+const servicesCards = computed<IProtocolService[]>(() => props.content[activeTab.value])
 
-// const contentCards = computed(() => props.content.services[activeTab.value])
+// watch
+watch(
+  () => props.content,
+  () => {
+    activeTab.value = tabsList.value[0]
+  }
+)
 </script>
 
 <template>
   <div class="service-content">
-    {{ props.content }}
-    <AppLoader v-if="loader" />
-    <template v-else>
-      <TabsList class="service-content__tabs" :tabs="tabsList" v-model="activeTab" />
-
-      <AppSimplebar class="service-content__wrapper">
-        <TransitionGroup name="list" tag="ul" class="service-content__list">
-          <ServiceCard v-for="i in 20" :key="'a' + i" />
-        </TransitionGroup>
+    <div class="service-content__head">
+      <AppSimplebar class="service-content__scroll">
+        <TabsList class="service-content__tabs" :tabs="tabsList" v-model="activeTab" />
       </AppSimplebar>
-    </template>
+    </div>
+
+    <AppSimplebar class="service-content__wrapper">
+      <ul class="service-content__list">
+        <ServiceCard v-for="card in servicesCards" :key="card.link" :data="card" />
+      </ul>
+    </AppSimplebar>
   </div>
 </template>
 

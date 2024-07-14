@@ -2,9 +2,7 @@
 @use 'sass:math';
 
 @function toRem($px) {
-  $result: math.div($px, 16) + rem;
-
-  @return $result;
+  @return $px / 16 * 1rem;
 }
 
 @function toEm($px, $current: 16) {

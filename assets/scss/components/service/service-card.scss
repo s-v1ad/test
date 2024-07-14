@@ -3,11 +3,12 @@
     display: flex;
     align-items: center;
     border: toRem(1) solid var(--color-divider);
-    border-radius: var(--border-radius-20);
-    padding: clamp(1.25rem, 1.15714rem + 0.38095vw, 1.5rem) toRem(24);
+    border-radius: toRem(20);
     transition: background-color var(--transition-default);
     cursor: pointer;
     gap: toRem(20);
+    padding-block: clamp(1.25rem, 1.15714rem + 0.38095vw, 1.5rem); //24 - 20
+    padding-inline: toRem(24);
   }
 
   &__title {
@@ -22,8 +23,8 @@
   }
 
   &__image {
-    width: clamp(1.5rem, 1.40714rem + 0.38095vw, 1.75rem);
-    height: clamp(1.5rem, 1.40714rem + 0.38095vw, 1.75rem);
+    width: clamp(1.5rem, 1.407142857142857rem + 0.38095238095238093vw, 1.75rem); //28 - 24
+    height: clamp(1.5rem, 1.407142857142857rem + 0.38095238095238093vw, 1.75rem); //28 - 24
   }
 
   &__arrow {

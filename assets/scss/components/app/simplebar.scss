@@ -2,19 +2,17 @@
   height: 100%;
   background-color: transparent;
 
+  :deep(.simplebar-scrollbar) {
+    background-color: transparent;
+  }
+
   :deep(.simplebar-track) {
-    width: toRem(6);
     background-color: transparent;
     visibility: visible;
     pointer-events: all;
   }
 
-  :deep(.simplebar-scrollbar) {
-    background-color: transparent;
-  }
-
   :deep(.simplebar-scrollbar::before) {
-    top: 0;
     z-index: var(--z-index-1);
     background-color: var(--color-divider);
     opacity: 1;
@@ -22,12 +20,32 @@
     inset: 0;
   }
 
-  :deep(.simplebar-placeholder) {
-    width: 100% !important;
-    height: 100% !important;
-  }
-
   &.simplebar-scrollable-y {
     padding-right: toRem(32);
+
+    :deep(.simplebar-track) {
+      width: toRem(6);
+    }
+
+    // :deep(.simplebar-placeholder) {
+    //   width: 100% !important;
+    //   height: 100% !important;
+    // }
+
+    :deep(.simplebar-scrollbar::before) {
+      top: 0;
+    }
   }
+
+  &.simplebar-scrollable-x {
+    padding-bottom: toRem(24);
+
+    :deep(.simplebar-track) {
+      height: toRem(6);
+    }
+  }
+
+  // &.simplebar-scrollable-y {
+  //   height: toRem(6);
+  // }
 }

@@ -1,7 +1,7 @@
 .protocol-list {
   position: relative;
-  border-radius: var(--border-radius-32);
-  padding: clamp(1rem, 0.6285rem + 1.5238vw, 2rem) clamp(1.5rem, 1.31428rem + 0.7619vw, 2rem);
+  border-radius: toRem(32);
+  padding: clamp(1rem, 0.6285714285714286rem + 1.5238095238095237vw, 2rem); //32 - 16
   background-color: var(--color-light-white);
 
   &__list {
@@ -9,13 +9,12 @@
     flex-direction: column;
     gap: toRem(16);
   }
+}
 
-  &__wrapper {
-    // height: 100%;
-
-    // :deep(.simplebar-content-wrapper) {
-    //   overflow: hidden;
-    //   border-radius: var(--border-radius-24);
-    // }
+@include mq('lg') {
+  .protocol-list {
+    &__wrapper {
+      max-height: toRem(300);
+    }
   }
 }

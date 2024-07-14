@@ -3,14 +3,15 @@
   flex: 0 0 toRem(191);
   align-items: center;
   justify-content: center;
-  border-radius: var(--border-radius-24);
-  padding: clamp(0.5625rem, 0.44642rem + 0.47619vw, 0.875rem) toRem(20); //14 - 9
+  border-radius: toRem(24);
   font-weight: 500;
   font-size: clamp(1.125rem, 1.07857rem + 0.19047vw, 1.25rem);
   line-height: 1.6;
   color: rgb(19 23 39 / 80%);
   transition: background-color var(--transition-default);
   gap: clamp(0.75rem, 0.65714rem + 0.38095vw, 1rem);
+  padding-block: clamp(0.5625rem, 0.4464285714285714rem + 0.4761904761904762vw, 0.875rem); //14 - 9
+  padding-inline: toRem(20);
 
   &__image {
     width: toRem(14);
@@ -30,5 +31,12 @@
     &:not(.tabs-item--active) {
       background-color: var(--color-accent-hover);
     }
+  }
+}
+
+@include mq('lg') {
+  .tabs-item {
+    flex-basis: auto;
+    border-radius: toRem(16);
   }
 }

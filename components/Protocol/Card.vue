@@ -1,4 +1,8 @@
 <script setup lang="ts">
+// Helpers
+import trimIcon from '@/utils/trimIcon'
+
+// Types
 import type { IProtocol } from '~/types'
 
 type TProps = {
@@ -14,7 +18,8 @@ const props = withDefaults(defineProps<TProps>(), { tag: 'li' })
 const emits = defineEmits<{ (e: 'click'): void }>()
 
 // Computed
-const imagePath = computed(() => `/images/protocols${props.protocol.icon}`)
+// const imagePath = computed(() => `/images/protocols${props.protocol.icon}`)
+const imagePath = computed(() => `Service${trimIcon(props.protocol.icon)}`)
 </script>
 
 <template>
@@ -26,7 +31,7 @@ const imagePath = computed(() => `/images/protocols${props.protocol.icon}`)
     :class="{ 'protocol-card--active': protocol.title === activeProtocol.title }"
     @click="$emit('click')"
   >
-    <img :src="imagePath" :alt="protocol.title" class="protocol-card__image" />
+    <Icon :name="imagePath" :alt="protocol.title" class="protocol-card__image" />
     <span class="protocol-card__title">{{ protocol.title }}</span>
   </component>
 </template>

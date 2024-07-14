@@ -586,7 +586,7 @@
     "no-missing-end-of-source-newline": null,
     "no-unknown-animations": null,
     "number-leading-zero": "always",
-    "number-max-precision": 5,
+    "number-max-precision": null,
     "number-no-trailing-zeros": true,
     "property-case": "lower",
     "property-no-unknown": [

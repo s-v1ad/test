@@ -30,10 +30,6 @@ export const protocols: IProtocolServices[] = [
           link: 'https://velocore.xyz'
         },
         { name: 'Maverick', icon: '/Maverick.svg', link: 'https://mav.xyz' },
-        { name: 'Izumi', icon: '/Izumi.svg', link: 'https://izumi.finance' },
-        { name: 'Maverick', icon: '/Maverick.svg', link: 'https://mav.xyz' },
-        { name: 'Izumi', icon: '/Izumi.svg', link: 'https://izumi.finance' },
-        { name: 'Maverick', icon: '/Maverick.svg', link: 'https://mav.xyz' },
         { name: 'Izumi', icon: '/Izumi.svg', link: 'https://izumi.finance' }
       ],
       landings: [{ name: 'Mute', icon: '/Mute.svg', link: 'https://syncswap.xyz' }],

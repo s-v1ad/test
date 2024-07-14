@@ -1,9 +1,8 @@
 .tabs-list {
   &__list {
     display: flex;
-    overflow: auto hidden;
     width: 100%;
     min-width: 0;
-    gap: clamp(0.75rem, 0.28571rem + 1.90476vw, 2rem); //32 - 12
+    gap: clamp(0.75rem, 0.2857142857142857rem + 1.9047619047619049vw, 2rem); //32 - 12
   }
 }

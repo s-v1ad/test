@@ -2,7 +2,6 @@
 import { type IProtocol } from '~/types'
 
 type TProps = {
-  loader: boolean
   modelValue: number
   activeProtocol: IProtocol
   protocolList: IProtocol[]
@@ -15,13 +14,30 @@ defineProps<TProps>()
 const emits = defineEmits<{
   (e: 'update:modelValue', value: number): void
 }>()
+
+// Data
+const isMobile = ref<boolean>(false)
+
+// Methods
+function checkMobile(): void {
+  if (window.matchMedia('(max-width: 61.9875rem)').matches) isMobile.value = true
+
+  isMobile.value = false
+}
+// Lifecycle hooks
+onMounted(() => {
+  checkMobile()
+  window.addEventListener('resize', checkMobile)
+})
+
+onBeforeUnmount(() => {
+  window.removeEventListener('resize', checkMobile)
+})
 </script>
 
 <template>
   <div class="protocol-list">
-    <AppLoader v-if="loader" />
-
-    <AppSimplebar v-else class="protocol-list__wrapper">
+    <AppSimplebar class="protocol-list__wrapper">
       <ul class="protocol-list__list">
         <ProtocolCard
           v-for="(protocol, i) in protocolList"

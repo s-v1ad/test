@@ -1,12 +1,13 @@
 .protocol-card {
   display: flex;
   align-items: center;
-  border-radius: var(--border-radius-24);
-  padding: clamp(1rem, 0.76785rem + 0.95238vw, 1.625rem) toRem(24); //26 - 24
+  border-radius: toRem(24);
   width: 100%;
   transition: background-color var(--transition-default);
   cursor: pointer;
-  gap: clamp(0.75rem, 0.47142rem + 1.14285vw, 1.5rem); // 24 - 12
+  gap: clamp(1.25rem, 1.157142857142857rem + 0.38095238095238093vw, 1.5rem); //24 - 20;
+  padding-block: clamp(1.25rem, 1.157142857142857rem + 0.38095238095238093vw, 1.5rem); //24 - 20
+  padding-inline: toRem(24);
 
   &__image {
     flex-shrink: 0;
@@ -16,8 +17,8 @@
 
   &__title {
     overflow: hidden;
-    font-weight: 400;
-    font-size: clamp(1.125rem, 1.07857rem + 0.19047vw, 1.25rem); //20 - 18
+    font-weight: 500;
+    font-size: clamp(1.125rem, 1.0785714285714285rem + 0.19047619047619047vw, 1.25rem); //20 - 18
     line-height: 1.6;
     white-space: nowrap;
     text-overflow: ellipsis;
